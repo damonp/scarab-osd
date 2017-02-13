@@ -1,3 +1,5 @@
+uint16_t gdatain=0;
+uint16_t gdataout=0;
 
 #define POS_MASK        0x01FF
 #define PAL_MASK        0x0003

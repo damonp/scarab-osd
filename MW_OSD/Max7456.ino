@@ -344,7 +344,7 @@ void MAX7456_DrawScreen()
     if (!canvasMode) // Don't erase in canvas mode
 #endif
     {
-      screen[xx] = ' ';
+//      screen[xx] = ' ';
     #ifdef INVERTED_CHAR_SUPPORT
       bitCLR(screenAttr, xx);
     #endif

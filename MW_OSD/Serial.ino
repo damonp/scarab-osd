@@ -233,15 +233,28 @@ void serialMSPCheck()
         eeaddress = read8();
         eeaddress = eeaddress+(read8()<<8);
         eedata = read8();
+        if (eeaddress==0){
+          gdatain=0;
+          for(uint16_t xx=0; xx<400; xx++) {
+            screen[xx] = ' ';
+          }
+        }
+        
+        MAX7456_WriteString("*", (LINE01+eeaddress));
+
         settingsMode=1;
         MSP_OSD_timer=3000+millis();
         EEPROM.write(eeaddress,eedata);
+        
 //        if (eeaddress==0){
           EEPROM.write(0,EEPROMVER);
 //        }
         if ((eeaddress==(EEPROM_SETTINGS-1)+(EEPROM16_SETTINGS*2))||(eeaddress==(EEPROM_SETTINGS-1)+(EEPROM16_SETTINGS*2)+(3*2*POSITIONS_SETTINGS))){
           readEEPROM();
         }
+        gdatain++;
+        itoa(gdatain,screenBuffer,10);
+        MAX7456_WriteString(screenBuffer,LINE13+3);
       }
       eeaddress++;
     settingswriteSerialRequest();
