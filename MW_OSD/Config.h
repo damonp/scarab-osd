@@ -5,7 +5,7 @@
 /********************       OSD HARDWARE settings      *********************/
 //Choose ONLY ONE option:
 //#define MINIMOSD                  // Uncomment this if using standard MINIMOSD hardware (default)
-//#define MICROMINIMOSD             // Uncomment this if using the MICRO MINIMOSD hardware
+#define MICROMINIMOSD             // Uncomment this if using the MICRO MINIMOSD hardware
 //#define AEROMAX                   // Uncomment this if using MWOSD AEROMAX hardware
 //#define RTFQV1                    // Uncomment this if using standard RTFQ/Witespy V1.1 OSD, select this to correct for both swapped bat1/bat 2 and to also use alternative resistors / pinouts.  
 //#define RTFQMICRO                 // Uncomment this if using micro RTFQ/Witespy Micro Minim OSD, select this to correct for swapped bat1/bat 2.  
@@ -29,7 +29,7 @@
 // Choose ONLY ONE option from the following long list :-
 
 // latest release...
-//#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
+#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
 //#define BETAFLIGHT3               // Uncomment this if you are using BETAFLIGHT version 3.0.x 
 //#define CLEANFLIGHT               // Uncomment this if you are using latest CLEANFLIGHT version from repository (1.9 onwards 1.14.2 at time of this MWOSD release)
 //#define iNAV                      // Uncomment this if you are using latest iNAV version from repository (1.01 at time of this MWOSD release)
@@ -63,7 +63,7 @@
 
 /********************       AIRCRAFT/INSTALLATION TYPE settings      *********************/
 //Choose ONLY ONE option:
-//#define ROTORCRAFT                // Default for multirotors etc. 
+#define ROTORCRAFT                // Default for multirotors etc. 
 //#define FIXEDWING                 // Uncomment this if you are using fixed wing with MultiWii or Baseflight 
 
 
@@ -123,12 +123,12 @@
 
 /********************       FILTER settings      *********************/
 //Choose ONLY ONE option to enable filtered smoother readings of voltage / current / RSSI :
-#define FILTER_AVG                  // Enable standard averaging filter  
-//#define FILTER_HYSTERYSIS 2       // Alternative filter with hysteris to provide smoother changes. Higher number = more filtering. Max 4  
+//#define FILTER_AVG                  // Enable standard averaging filter  
+#define FILTER_HYSTERYSIS 3       // Alternative filter with hysteris to provide smoother changes. Higher number = more filtering. Max 4  
 
 /********************       RSSI settings (PWM/PPM)      *********************/
 //Note all require PWM RSSI to be enabled on GUI
-//#define RCRSSI 4                  // Undefine this to use RC channel (1-TX_CHANNELS- default 8) for RSSI (this can be from the FC - or a PPM channel with GPSOSD)
+#define RCRSSI 10                  // Undefine this to use RC channel (1-TX_CHANNELS- default 8) for RSSI (this can be from the FC - or a PPM channel with GPSOSD)
 
 
 /********************       GPS settings      *********************/
@@ -185,7 +185,7 @@
 //#define FREETEXTGIMBAL           // Alternative option - enable to display freetext (or callsign) when GIMBAL Switch active on TX.
 
 /********************       STARTUP settings      *********************/
-//#define INTRO_VERSION               "MWOSD - 1.7" // Call the OSD something else if you prefer. 
+#define INTRO_VERSION               "MWOSD - 1.7.1.1" // Call the OSD something else if you prefer. 
 #define INTRO_MENU                  // Enable to display TX stick MENU 
 #define INTRO_CALLSIGN              // Enable to display callsign at startup
 #define INTRO_SIGNALTYPE            // Enable to display video type at startup
@@ -213,8 +213,8 @@
 //#define HIDEARMEDSTATUS           // Enable to hide ARMED / DISARMED status
 //#define HIDESUMMARY               // Enable to suspend display of summary screen when disarming
 //#define SHORTSUMMARY              // Display only timer on flight summary 
-//#define MINSUMMARY                // Hide summary screen values that are 0
-//#define FASTPIXEL                 // Optional - may improve resolution - especially hi res cams
+#define MINSUMMARY                // Hide summary screen values that are 0
+#define FASTPIXEL                 // Optional - may improve resolution - especially hi res cams
 //#define WHITEBRIGHTNESS 0x01      // Optional change from default 0x00=120%,0x01=100%,0x10=90%,0x11=80%  default is 0x01=100%
 //#define BLACKBRIGHTNESS 0x00      // Optional change from default 0x00=0%,0x01=10%,0x10=20%0x11=30%  default is 0x00=0%
 //#define I2CERROR 3                // Autodisplay Mutltiwii I2C errors if exceeds specified count 
@@ -246,7 +246,7 @@
 
 /********************   RC TX Settings     *********************/
 //#define TX_MODE1                  // Enable this if wish to use cursor controls on same stick - for MODE 1 TX users
-//#define TX_CHANNELS 8             // Amend if require up to 16 RC channels (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
+//#define TX_CHANNELS 10             // Amend if require up to 16 RC channels (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
 //#define TX_RHF                    // Enable for Robe/Hitec/Futaba (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
 //#define TX_GS                     // Enable for Graupner/Spektrum (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)    
 //#define TX_M                      // Enable for Multiplex (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
@@ -285,7 +285,7 @@
 // This works in conjunction with the GUI switch "Display Battery Status
 // Enable to use a battery icon that indicates capacity remaining dependant upon battery voltage or mAh used. Or both if required.
 #define BATTERYICONVOLTS            //Enable to use with voltage as indicator of capacity remaining
-//#define BATTERYICONAMPS           //Enable to use with mAh used percentage of AMPHR alarm limit. Warning will now be at 80% of that GUI value
+#define BATTERYICONAMPS           //Enable to use with mAh used percentage of AMPHR alarm limit. Warning will now be at 80% of that GUI value
 
 
 /********************       I2C support         ************************/
@@ -342,6 +342,6 @@
 // This is to enable rarely used advanced parameter saving. Off by default to minimise risk 
 // Enabling may create ability to write invalid data to FC
 //#define ADVANCEDSAVE                   // Enables saving of advanced paramters where supported (Looptime/profile)
-#define HARDRESET
+//#define HARDRESET
 
 
