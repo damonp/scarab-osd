@@ -92,13 +92,13 @@
 /********************       FEATURES      *********************/
 // Disable features if you require memory for other features
 // Further configuration may be require elsewhere in config.h + option enabled on GUI
-#define SBDIRECTION     // Enable/disable sidebar indicators (changes in speed or altitude)
-#define HORIZON         // Enable/disable HORIZON indicator
-#define MAPMODE         // Enable/disable MAP MODE - map indication of relative positions of home and aircraft
+//#define SBDIRECTION     // Enable/disable sidebar indicators (changes in speed or altitude)
+//#define HORIZON         // Enable/disable HORIZON indicator
+//#define MAPMODE         // Enable/disable MAP MODE - map indication of relative positions of home and aircraft
 //#define GPSTIME       // Enable/disable GPS Time functions
 //#define SPORT         // Enable/disable FRSKY S.PORT cell code
 
-//#define CANVAS_SUPPORT            // Enable CANVAS mode support for post betaflight 3.1.0 CMS
+#define CANVAS_SUPPORT            // Enable CANVAS mode support for post betaflight 3.1.0 CMS
 //#define INVERTED_CHAR_SUPPORT     // Enable inverted char support
 
 
@@ -124,7 +124,7 @@
 /********************       FILTER settings      *********************/
 //Choose ONLY ONE option to enable filtered smoother readings of voltage / current / RSSI :
 //#define FILTER_AVG                  // Enable standard averaging filter  
-#define FILTER_HYSTERYSIS 3       // Alternative filter with hysteris to provide smoother changes. Higher number = more filtering. Max 4  
+#define FILTER_HYSTERYSIS 2       // Alternative filter with hysteris to provide smoother changes. Higher number = more filtering. Max 4  
 
 /********************       RSSI settings (PWM/PPM)      *********************/
 //Note all require PWM RSSI to be enabled on GUI
@@ -213,7 +213,7 @@
 //#define HIDEARMEDSTATUS           // Enable to hide ARMED / DISARMED status
 //#define HIDESUMMARY               // Enable to suspend display of summary screen when disarming
 //#define SHORTSUMMARY              // Display only timer on flight summary 
-#define MINSUMMARY                // Hide summary screen values that are 0
+#define MINSUMMARY                // Hide flight summary values that are 0
 #define FASTPIXEL                 // Optional - may improve resolution - especially hi res cams
 //#define WHITEBRIGHTNESS 0x01      // Optional change from default 0x00=120%,0x01=100%,0x10=90%,0x11=80%  default is 0x01=100%
 //#define BLACKBRIGHTNESS 0x00      // Optional change from default 0x00=0%,0x01=10%,0x10=20%0x11=30%  default is 0x00=0%
@@ -246,7 +246,7 @@
 
 /********************   RC TX Settings     *********************/
 //#define TX_MODE1                  // Enable this if wish to use cursor controls on same stick - for MODE 1 TX users
-//#define TX_CHANNELS 10             // Amend if require up to 16 RC channels (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
+#define TX_CHANNELS 10             // Amend if require up to 16 RC channels (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
 //#define TX_RHF                    // Enable for Robe/Hitec/Futaba (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
 //#define TX_GS                     // Enable for Graupner/Spektrum (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)    
 //#define TX_M                      // Enable for Multiplex (Only use for GPSOSD/NAZA/APM/PIXHAWK/MAVLINK)
@@ -342,6 +342,6 @@
 // This is to enable rarely used advanced parameter saving. Off by default to minimise risk 
 // Enabling may create ability to write invalid data to FC
 //#define ADVANCEDSAVE                   // Enables saving of advanced paramters where supported (Looptime/profile)
-//#define HARDRESET
+#define HARDRESET
 
 
